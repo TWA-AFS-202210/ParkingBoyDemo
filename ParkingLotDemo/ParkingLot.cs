@@ -21,7 +21,11 @@ public class ParkingLot
     {
         if (this.parkingSpace.Count >= this.size)
         {
-            return null;
+            if (parkingSpace.Count >= size)
+            {
+                throw new LotFullException("Not enough positions.");
+            }
+
         }
 
         Ticket ticket = new Ticket(car.CarNumber);
