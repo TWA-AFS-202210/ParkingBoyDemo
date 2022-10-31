@@ -48,12 +48,12 @@ namespace ParkingLotDemoTest
             var parkingBoy = new ParkingBoy(paringLot);
 
             // when
-            var tickets = parkingBoy.Parking(cars);
+            var response = parkingBoy.Parking(cars);
 
             // then
-            Assert.Equal(car1.CarNumber, tickets[0].CarNumber);
-            Assert.Equal(car2.CarNumber, tickets[1].CarNumber);
-            Assert.Equal(car3.CarNumber, tickets[2].CarNumber);
+            Assert.Equal(car1.CarNumber, response.Tickets[0].CarNumber);
+            Assert.Equal(car2.CarNumber, response.Tickets[1].CarNumber);
+            Assert.Equal(car3.CarNumber, response.Tickets[2].CarNumber);
         }
 
         [Fact]
@@ -70,11 +70,11 @@ namespace ParkingLotDemoTest
             };
             var paringLot = new ParkingLot();
             var parkingBoy = new ParkingBoy(paringLot);
-            var tickets = parkingBoy.Parking(cars);
+            var response = parkingBoy.Parking(cars);
             //then
-            Assert.Equal(car1, parkingBoy.PickUp(tickets[0]));
-            Assert.Equal(car2, parkingBoy.PickUp(tickets[1]));
-            Assert.Equal(car3, parkingBoy.PickUp(tickets[2]));
+            Assert.Equal(car1, parkingBoy.PickUp(response.Tickets[0]));
+            Assert.Equal(car2, parkingBoy.PickUp(response.Tickets[1]));
+            Assert.Equal(car3, parkingBoy.PickUp(response.Tickets[2]));
         }
 
         [Fact]
@@ -154,6 +154,26 @@ namespace ParkingLotDemoTest
             // then
             var lotFullException = Assert.Throws<LotFullException>(() => parkingBoy.Parking(car));
             Assert.Equal("Not enough positions.", lotFullException.Message);
+        }
+
+        [Fact]
+        public void Should_can_not_batch_parking_when_lot_is_full()
+        {
+            // given
+            var paringLot = new ParkingLot(2);
+            var parkingBoy = new ParkingBoy(paringLot);
+            var car1 = new Car("car1");
+            var car2 = new Car("car2");
+            var car3 = new Car("car3");
+            parkingBoy.Parking(car1);
+
+            // when
+            BatchParkingResponse parkingResult = parkingBoy.Parking(new List<Car>() { car2, car3 });
+
+            // then
+            Assert.False(parkingResult.IsSuccess);
+            Assert.Equal(1, parkingResult.Tickets.Count);
+            Assert.Equal("Not enough positions.", parkingResult.ErrorMessage);
         }
     }
 }

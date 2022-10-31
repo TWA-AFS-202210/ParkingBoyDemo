@@ -30,8 +30,23 @@ public class ParkingBoy
         return car;
     }
 
-    public List<Ticket> Parking(List<Car> cars)
+    public BatchParkingResponse Parking(List<Car> cars)
     {
-        return cars.Select(Parking).ToList();
+        List<Ticket> tickets = new List<Ticket>();
+        string message = string.Empty;
+        foreach (var car in cars)
+        {
+            try
+            {
+                var ticket = this.Parking(car);
+                tickets.Add(ticket);
+            }
+            catch (Exception e)
+            {
+                message = "Not enough positions.";
+            }
+        }
+
+        return new BatchParkingResponse(tickets, message.Equals(String.Empty), message);
     }
 }
