@@ -138,5 +138,25 @@ namespace ParkingLotDemoTest
             //then
             Assert.Null(ticket);
         }
+
+        [Fact]
+        public void Should_can_not_parking_when_lot_not_set_and_parking_10()
+        {
+            // given
+            var paringLot = new ParkingLot();
+            var parkingBoy = new ParkingBoy(paringLot);
+            var car = new Car("lastCar");
+
+            for (var i = 0; i < 10; i++)
+            {
+                parkingBoy.Parking(new Car(i.ToString()));
+            }
+
+            // when
+            var ticket = parkingBoy.Parking(car);
+
+            // then
+            Assert.Null(ticket);
+        }
     }
 }

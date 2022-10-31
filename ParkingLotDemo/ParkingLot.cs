@@ -8,6 +8,7 @@ public class ParkingLot
     public ParkingLot()
     {
         parkingSpace = new Dictionary<Ticket, Car>();
+        this.size = 10;
     }
 
     public ParkingLot(int size)
@@ -18,7 +19,7 @@ public class ParkingLot
 
     public Ticket Parking(Car car)
     {
-        if (this.size != 0 && this.parkingSpace.Count >= this.size)
+        if (this.parkingSpace.Count >= this.size)
         {
             return null;
         }
