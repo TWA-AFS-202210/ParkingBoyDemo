@@ -74,5 +74,17 @@ namespace ParkingLotDemoTest
             Assert.Equal(car2, parkingBoy.PickUp(tickets[1]));
             Assert.Equal(car3, parkingBoy.PickUp(tickets[2]));
         }
+
+        [Fact]
+        public void Should_return_null_when_given_null_as_ticket()
+        {
+            //given
+            var paringLot = new ParkingLot();
+            var parkingBoy = new ParkingBoy(paringLot);
+            //when
+            var pickUp = parkingBoy.PickUp(null);
+            //then
+            Assert.Null(pickUp);
+        }
     }
 }

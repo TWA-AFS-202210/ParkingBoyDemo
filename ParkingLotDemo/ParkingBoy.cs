@@ -16,6 +16,10 @@ public class ParkingBoy
 
     public Car PickUp(Ticket ticket)
     {
+        if (ticket == null)
+        {
+            return null;
+        }
         return _parkingLot.PickUp(ticket);
     }
 
