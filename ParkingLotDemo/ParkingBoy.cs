@@ -9,13 +9,18 @@ public class ParkingBoy
         _parkingLot = parkingLot;
     }
 
-    public Ticket ParkingCar(Car car)
-    { 
+    public Ticket Parking(Car car)
+    {
         return _parkingLot.Parking(car);
     }
 
-    public Car FetchCar(Ticket ticket)
+    public Car PickUp(Ticket ticket)
     {
-        return _parkingLot.FetchCar(ticket);
+        return _parkingLot.PickUp(ticket);
+    }
+
+    public List<Ticket> Parking(List<Car> cars)
+    {
+        return cars.Select(Parking).ToList();
     }
 }

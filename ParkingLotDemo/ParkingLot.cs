@@ -11,12 +11,12 @@ public class ParkingLot
 
     public Ticket Parking(Car car)
     {
-        Ticket ticket = new Ticket();
+        Ticket ticket = new Ticket(car.CarNumber);
         _parkingSpace.Add(ticket, car);
         return ticket;
     }
 
-    public Car FetchCar(Ticket ticket)
+    public Car PickUp(Ticket ticket)
     {
         return _parkingSpace[ticket];
     }
