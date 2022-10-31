@@ -2,16 +2,16 @@ namespace ParkingLotDemo;
 
 public class ParkingBoy
 {
-    private ParkingLot _parkingLot;
+    private ParkingLot parkingLot;
 
     public ParkingBoy(ParkingLot parkingLot)
     {
-        _parkingLot = parkingLot;
+        this.parkingLot = parkingLot;
     }
 
     public Ticket Parking(Car car)
     {
-        return _parkingLot.Parking(car);
+        return parkingLot.Parking(car);
     }
 
     public Car PickUp(Ticket ticket)
@@ -21,7 +21,7 @@ public class ParkingBoy
             return null;
         }
 
-        return _parkingLot.PickUp(ticket);
+        return parkingLot.PickUp(ticket);
     }
 
     public List<Ticket> Parking(List<Car> cars)

@@ -102,5 +102,20 @@ namespace ParkingLotDemoTest
             // then
             Assert.Null(pickUp);
         }
+
+        [Fact]
+        public void Should_return_null_when_ticket_is_used()
+        {
+            //given
+            var paringLot = new ParkingLot();
+            var parkingBoy = new ParkingBoy(paringLot);
+            var car = new Car("car1");
+            var ticket = parkingBoy.Parking(car);
+            parkingBoy.PickUp(ticket);
+            //when
+            var pickUp = parkingBoy.PickUp(ticket);
+            //then
+            Assert.Null(pickUp);
+        }
     }
 }

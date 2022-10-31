@@ -2,16 +2,16 @@ namespace ParkingLotDemo;
 
 public class Ticket
 {
-    private string _carNumber;
+    private string carNumber;
 
     public Ticket(string carNumber)
     {
-        _carNumber = carNumber;
+        this.carNumber = carNumber;
     }
 
     public string CarNumber
     {
-        get => _carNumber;
-        set => _carNumber = value;
+        get => carNumber;
+        set => carNumber = value;
     }
 }

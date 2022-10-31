@@ -2,7 +2,7 @@ namespace ParkingLotDemo;
 
 public class Car
 {
-    private string _carNumber;
+    private string carNumber;
 
     public Car(string carNumber)
     {
@@ -11,7 +11,7 @@ public class Car
 
     public string CarNumber
     {
-        get => _carNumber;
-        set => _carNumber = value;
+        get => carNumber;
+        set => carNumber = value;
     }
 }
