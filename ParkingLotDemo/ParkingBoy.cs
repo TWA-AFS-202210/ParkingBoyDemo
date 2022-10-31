@@ -18,10 +18,16 @@ public class ParkingBoy
     {
         if (ticket == null)
         {
-            return null;
+            throw new ParkingException("Unrecognized parking ticket.");
         }
 
-        return parkingLot.PickUp(ticket);
+        var car = this.parkingLot.PickUp(ticket);
+        if (car == null)
+        {
+            throw new ParkingException("Unrecognized parking ticket.");
+        }
+
+        return car;
     }
 
     public List<Ticket> Parking(List<Car> cars)
