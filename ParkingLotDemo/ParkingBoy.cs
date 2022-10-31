@@ -33,7 +33,7 @@ public class ParkingBoy
             throw new ParkingException("Please provide your parking ticket.");
         }
 
-        var car = this.parkingLots[0].PickUp(ticket);
+        var car = this.parkingLots.Select(lot => lot.PickUp(ticket)).FirstOrDefault(car => car != null);
         if (car == null)
         {
             throw new ParkingException("Unrecognized parking ticket.");
