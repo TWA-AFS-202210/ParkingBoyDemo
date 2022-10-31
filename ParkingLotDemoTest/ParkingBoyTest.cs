@@ -87,7 +87,8 @@ namespace ParkingLotDemoTest
             // when
             // then
             var parkingException = Assert.Throws<ParkingException>(() => parkingBoy.PickUp(null));
-            Assert.Equal("Unrecognized parking ticket.", parkingException.Message);
+            Assert.Equal("Please provide your parking ticket.", parkingException.Message);
+
         }
 
         [Fact]

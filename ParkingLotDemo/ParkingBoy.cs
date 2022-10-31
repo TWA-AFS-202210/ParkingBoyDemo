@@ -18,7 +18,7 @@ public class ParkingBoy
     {
         if (ticket == null)
         {
-            throw new ParkingException("Unrecognized parking ticket.");
+            throw new ParkingException("Please provide your parking ticket.");
         }
 
         var car = this.parkingLot.PickUp(ticket);
