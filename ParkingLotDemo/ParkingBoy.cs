@@ -20,6 +20,7 @@ public class ParkingBoy
         {
             return null;
         }
+
         return _parkingLot.PickUp(ticket);
     }
 

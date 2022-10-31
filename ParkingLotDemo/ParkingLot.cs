@@ -18,6 +18,11 @@ public class ParkingLot
 
     public Car PickUp(Ticket ticket)
     {
-        return _parkingSpace[ticket];
+        if (_parkingSpace.ContainsKey(ticket))
+        {
+            return _parkingSpace[ticket];
+        }
+
+        return null;
     }
 }

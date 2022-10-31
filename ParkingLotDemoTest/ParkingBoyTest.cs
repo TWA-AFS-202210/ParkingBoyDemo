@@ -78,12 +78,28 @@ namespace ParkingLotDemoTest
         [Fact]
         public void Should_return_null_when_given_null_as_ticket()
         {
-            //given
+            // given
             var paringLot = new ParkingLot();
             var parkingBoy = new ParkingBoy(paringLot);
-            //when
+
+            // when
             var pickUp = parkingBoy.PickUp(null);
-            //then
+
+            // then
+            Assert.Null(pickUp);
+        }
+
+        [Fact]
+        public void Should_return_null_when_given_ticket_not_in_lot()
+        {
+            // given
+            var paringLot = new ParkingLot();
+            var parkingBoy = new ParkingBoy(paringLot);
+
+            // when
+            var pickUp = parkingBoy.PickUp(new Ticket(null));
+
+            // then
             Assert.Null(pickUp);
         }
     }
