@@ -48,4 +48,9 @@ public class ParkingLot
     {
         return this.parkingSpace.Count < this.size;
     }
+
+    public int GetPosition()
+    {
+        return this.size - this.parkingSpace.Count;
+    }
 }
