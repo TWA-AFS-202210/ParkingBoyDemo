@@ -3,15 +3,27 @@ namespace ParkingLotDemo;
 public class ParkingBoy
 {
     private ParkingLot parkingLot;
+    private List<ParkingLot> parkingLots;
 
     public ParkingBoy(ParkingLot parkingLot)
     {
-        this.parkingLot = parkingLot;
+        this.parkingLots = new List<ParkingLot>() { parkingLot };
+    }
+
+    public ParkingBoy(List<ParkingLot> parkingLots)
+    {
+        this.parkingLots = parkingLots;
     }
 
     public Ticket Parking(Car car)
     {
-        return parkingLot.Parking(car);
+        var hasPositionLot = this.parkingLots.Where(lot => lot.HasPosition()).FirstOrDefault((ParkingLot)null);
+        if (hasPositionLot == null)
+        {
+            throw new LotFullException("Not enough positions.");
+        }
+
+        return hasPositionLot.Parking(car);
     }
 
     public Car PickUp(Ticket ticket)
@@ -21,7 +33,7 @@ public class ParkingBoy
             throw new ParkingException("Please provide your parking ticket.");
         }
 
-        var car = this.parkingLot.PickUp(ticket);
+        var car = this.parkingLots[0].PickUp(ticket);
         if (car == null)
         {
             throw new ParkingException("Unrecognized parking ticket.");
@@ -47,6 +59,6 @@ public class ParkingBoy
             }
         }
 
-        return new BatchParkingResponse(tickets, message.Equals(String.Empty), message);
+        return new BatchParkingResponse(tickets, message.Equals(string.Empty), message);
     }
 }

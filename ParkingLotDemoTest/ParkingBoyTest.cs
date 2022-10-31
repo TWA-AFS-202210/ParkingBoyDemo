@@ -175,5 +175,20 @@ namespace ParkingLotDemoTest
             Assert.Equal(1, parkingResult.Tickets.Count);
             Assert.Equal("Not enough positions.", parkingResult.ErrorMessage);
         }
+
+        [Fact]
+        public void Should_parking_to_lot_2_when_parking_given_parking_boy_has_two_lot_and_lot1_is_full()
+        {
+            //given
+            var lot1 = new ParkingLot(1);
+            var lot2 = new ParkingLot(2);
+            var parkingBoy = new ParkingBoy(new List<ParkingLot>() { lot1, lot2 });
+            parkingBoy.Parking(new Car("car1"));
+            var car = new Car("car2");
+            //when
+            var ticket = parkingBoy.Parking(car);
+            //then
+            Assert.Equal(car, lot2.PickUp(ticket));
+        }
     }
 }

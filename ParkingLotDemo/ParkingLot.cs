@@ -25,7 +25,6 @@ public class ParkingLot
             {
                 throw new LotFullException("Not enough positions.");
             }
-
         }
 
         Ticket ticket = new Ticket(car.CarNumber);
@@ -43,5 +42,10 @@ public class ParkingLot
         var pickUpCar = parkingSpace[ticket];
         parkingSpace.Remove(ticket);
         return pickUpCar;
+    }
+
+    public bool HasPosition()
+    {
+        return this.parkingSpace.Count < this.size;
     }
 }
