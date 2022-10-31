@@ -10,12 +10,13 @@
     &lt;TestId&gt;xUnit::D8806E26-9410-4D8C-9E01-C475ACDBC8FA::net6.0::ParkingLotDemoTest.SmartParkingBoyTest&lt;/TestId&gt;
   &lt;/TestAncestor&gt;
 &lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=87a049f2_002Dd414_002D463d_002D8e8d_002D6ddd0169576c/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="ParkingBoyTest" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=87a049f2_002Dd414_002D463d_002D8e8d_002D6ddd0169576c/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="ParkingBoyTest" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
   &lt;TestAncestor&gt;
     &lt;TestId&gt;xUnit::D8806E26-9410-4D8C-9E01-C475ACDBC8FA::net6.0::ParkingLotDemoTest.ParkingBoyTest&lt;/TestId&gt;
+    &lt;TestId&gt;xUnit::D8806E26-9410-4D8C-9E01-C475ACDBC8FA::net6.0::ParkingLotDemoTest.SmartParkingBoyTest&lt;/TestId&gt;
   &lt;/TestAncestor&gt;
 &lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=915de898_002Da0a5_002D45bc_002D8b68_002D19872145ca81/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="ParkingBoyTest #5" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=915de898_002Da0a5_002D45bc_002D8b68_002D19872145ca81/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="ParkingBoyTest #5" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
   &lt;TestAncestor&gt;
     &lt;TestId&gt;xUnit::D8806E26-9410-4D8C-9E01-C475ACDBC8FA::net6.0::ParkingLotDemoTest.ParkingBoyTest&lt;/TestId&gt;
     &lt;TestId&gt;xUnit::D8806E26-9410-4D8C-9E01-C475ACDBC8FA::net6.0::ParkingLotDemoTest.SmartParkingBoyTest&lt;/TestId&gt;
@@ -24,6 +25,12 @@
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=ae49ceab_002D9da8_002D4c50_002D85c8_002Dca29ab314b44/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="ParkingBoyTest #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
   &lt;TestAncestor&gt;
     &lt;TestId&gt;xUnit::D8806E26-9410-4D8C-9E01-C475ACDBC8FA::net6.0::ParkingLotDemoTest.ParkingBoyTest&lt;/TestId&gt;
+  &lt;/TestAncestor&gt;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=db777ec6_002Dce58_002D468d_002Dbe85_002D74f1818d65be/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="ParkingBoyTest #6" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+  &lt;TestAncestor&gt;
+    &lt;TestId&gt;xUnit::D8806E26-9410-4D8C-9E01-C475ACDBC8FA::net6.0::ParkingLotDemoTest.ParkingBoyTest&lt;/TestId&gt;
+    &lt;TestId&gt;xUnit::D8806E26-9410-4D8C-9E01-C475ACDBC8FA::net6.0::ParkingLotDemoTest.SmartParkingBoyTest&lt;/TestId&gt;
   &lt;/TestAncestor&gt;
 &lt;/SessionState&gt;</s:String>
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=efd854c5_002Dab3b_002D4505_002D9d88_002Dbe6854f59b0b/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="ParkingBoyTest #3" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
