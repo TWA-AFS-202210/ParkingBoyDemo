@@ -46,9 +46,11 @@ namespace ParkingLotDemoTest
             cars.Add(car3);
             var paringLot = new ParkingLot();
             var parkingBoy = new ParkingBoy(paringLot);
-            //when
+
+            // when
             var tickets = parkingBoy.Parking(cars);
-            //then
+
+            // then
             Assert.Equal(car1.CarNumber, tickets[0].CarNumber);
             Assert.Equal(car2.CarNumber, tickets[1].CarNumber);
             Assert.Equal(car3.CarNumber, tickets[2].CarNumber);
@@ -116,6 +118,25 @@ namespace ParkingLotDemoTest
             var pickUp = parkingBoy.PickUp(ticket);
             //then
             Assert.Null(pickUp);
+        }
+
+        [Fact]
+        public void Should_can_not_parking_when_lot_is_full()
+        {
+            //given
+            var paringLot = new ParkingLot(2);
+            var parkingBoy = new ParkingBoy(paringLot);
+            var car1 = new Car("car1");
+            var car2 = new Car("car2");
+            var car3 = new Car("car3");
+            parkingBoy.Parking(car1);
+            parkingBoy.Parking(car2);
+
+            //when
+            var ticket = parkingBoy.Parking(car3);
+
+            //then
+            Assert.Null(ticket);
         }
     }
 }
